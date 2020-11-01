@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feedNavigationController = main.instantiateViewController(identifier: "FeedNavigationController")
+            window?.rootViewController = feedNavigationController
+            
+        }
         
     }
 
@@ -25,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
