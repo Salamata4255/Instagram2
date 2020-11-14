@@ -45,4 +45,3 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/WIWwjthzd0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-![image](https://user-images.githubusercontent.com/57270552/99141236-59586280-2617-11eb-8ac2-8a9293d0fb84.png)
